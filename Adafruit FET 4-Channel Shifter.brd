@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.3">
+<eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.01" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.025" altunitdist="inch" altunit="inch"/>
@@ -1428,16 +1429,23 @@ chip</description>
 <param name="slThermalsForVias" value="0"/>
 <param name="dpMaxLengthDifference" value="10mm"/>
 <param name="dpGapFactor" value="2.5"/>
-<param name="checkGrid" value="0"/>
 <param name="checkAngle" value="0"/>
 <param name="checkFont" value="1"/>
 <param name="checkRestrict" value="1"/>
+<param name="checkStop" value="0"/>
+<param name="checkValues" value="0"/>
+<param name="checkNames" value="1"/>
+<param name="checkWireStubs" value="1"/>
+<param name="checkPolygonWidth" value="0"/>
 <param name="useDiameter" value="13"/>
 <param name="maxErrors" value="50"/>
 </designrules>
 <autorouter>
 <pass name="Default">
 <param name="RoutingGrid" value="50mil"/>
+<param name="AutoGrid" value="1"/>
+<param name="Efforts" value="0"/>
+<param name="TopRouterVariant" value="1"/>
 <param name="tpViaShape" value="round"/>
 <param name="PrefDir.1" value="|"/>
 <param name="PrefDir.2" value="0"/>
@@ -1504,21 +1512,63 @@ chip</description>
 </pass>
 </autorouter>
 <elements>
-<element name="Q2" library="adafruit" package="SOT23" value="BSS138" x="6.096" y="11.938" rot="R270"/>
-<element name="Q1" library="adafruit" package="SOT23" value="BSS138" x="9.398" y="14.478" rot="R270"/>
-<element name="R2" library="adafruit" package="R0805" value="10K" x="9.906" y="11.938"/>
-<element name="R3" library="adafruit" package="R0805" value="10K" x="9.398" y="17.018" rot="R180"/>
-<element name="R4" library="adafruit" package="R0805" value="10K" x="5.588" y="14.986" rot="R180"/>
-<element name="R1" library="adafruit" package="R0805" value="10K" x="5.588" y="17.018" rot="R180"/>
-<element name="JP3" library="adafruit" package="1X06-CLEANBIG" value="" x="2.54" y="10.16" rot="R90"/>
-<element name="JP4" library="adafruit" package="1X06-CLEANBIG" value="" x="12.7" y="10.16" rot="R90"/>
-<element name="Q3" library="adafruit" package="SOT23" value="BSS138" x="9.652" y="7.112" rot="R270"/>
-<element name="R5" library="adafruit" package="R0805" value="10K" x="5.588" y="9.144" rot="R180"/>
-<element name="R6" library="adafruit" package="R0805" value="10K" x="9.906" y="9.906" rot="R180"/>
-<element name="Q4" library="adafruit" package="SOT23" value="BSS138" x="5.842" y="4.064" rot="R270"/>
-<element name="R7" library="adafruit" package="R0805" value="10K" x="9.652" y="4.064" rot="R180"/>
-<element name="R8" library="adafruit" package="R0805" value="10K" x="5.588" y="6.858" rot="R180"/>
-<element name="U$1" library="microbuilder" package="ADAFRUIT_3.5MM" value="" x="9.398" y="16.256" rot="MR0"/>
+<element name="Q2" library="adafruit" package="SOT23" value="BSS138" x="6.096" y="11.938" smashed="yes" rot="R270">
+<attribute name="NAME" x="8.001" y="13.843" size="1.27" layer="25" rot="R270"/>
+<attribute name="VALUE" x="2.921" y="13.843" size="1.27" layer="27" rot="R270"/>
+</element>
+<element name="Q1" library="adafruit" package="SOT23" value="BSS138" x="9.398" y="14.478" smashed="yes" rot="R270">
+<attribute name="NAME" x="11.303" y="16.383" size="1.27" layer="25" rot="R270"/>
+<attribute name="VALUE" x="6.223" y="16.383" size="1.27" layer="27" rot="R270"/>
+</element>
+<element name="R2" library="adafruit" package="R0805" value="10K" x="9.906" y="11.938" smashed="yes">
+<attribute name="NAME" x="9.144" y="12.954" size="1.27" layer="25"/>
+<attribute name="VALUE" x="9.144" y="9.652" size="1.27" layer="27"/>
+</element>
+<element name="R3" library="adafruit" package="R0805" value="10K" x="9.398" y="17.018" smashed="yes" rot="R180">
+<attribute name="NAME" x="10.16" y="16.002" size="1.27" layer="25" rot="R180"/>
+<attribute name="VALUE" x="10.16" y="19.304" size="1.27" layer="27" rot="R180"/>
+</element>
+<element name="R4" library="adafruit" package="R0805" value="10K" x="5.588" y="14.986" smashed="yes" rot="R180">
+<attribute name="NAME" x="6.35" y="13.97" size="1.27" layer="25" rot="R180"/>
+<attribute name="VALUE" x="6.35" y="17.272" size="1.27" layer="27" rot="R180"/>
+</element>
+<element name="R1" library="adafruit" package="R0805" value="10K" x="5.588" y="17.018" smashed="yes" rot="R180">
+<attribute name="NAME" x="6.35" y="16.002" size="1.27" layer="25" rot="R180"/>
+<attribute name="VALUE" x="6.35" y="19.304" size="1.27" layer="27" rot="R180"/>
+</element>
+<element name="JP3" library="adafruit" package="1X06-CLEANBIG" value="" x="2.54" y="10.16" smashed="yes" rot="R90">
+<attribute name="NAME" x="0.7112" y="2.4638" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="5.715" y="2.54" size="1.27" layer="27" rot="R90"/>
+</element>
+<element name="JP4" library="adafruit" package="1X06-CLEANBIG" value="" x="12.7" y="10.16" smashed="yes" rot="R90">
+<attribute name="NAME" x="10.8712" y="2.4638" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="15.875" y="2.54" size="1.27" layer="27" rot="R90"/>
+</element>
+<element name="Q3" library="adafruit" package="SOT23" value="BSS138" x="9.652" y="7.112" smashed="yes" rot="R270">
+<attribute name="NAME" x="11.557" y="9.017" size="1.27" layer="25" rot="R270"/>
+<attribute name="VALUE" x="6.477" y="9.017" size="1.27" layer="27" rot="R270"/>
+</element>
+<element name="R5" library="adafruit" package="R0805" value="10K" x="5.588" y="9.144" smashed="yes" rot="R180">
+<attribute name="NAME" x="6.35" y="8.128" size="1.27" layer="25" rot="R180"/>
+<attribute name="VALUE" x="6.35" y="11.43" size="1.27" layer="27" rot="R180"/>
+</element>
+<element name="R6" library="adafruit" package="R0805" value="10K" x="9.906" y="9.906" smashed="yes" rot="R180">
+<attribute name="NAME" x="10.668" y="8.89" size="1.27" layer="25" rot="R180"/>
+<attribute name="VALUE" x="10.668" y="12.192" size="1.27" layer="27" rot="R180"/>
+</element>
+<element name="Q4" library="adafruit" package="SOT23" value="BSS138" x="5.842" y="4.064" smashed="yes" rot="R270">
+<attribute name="NAME" x="7.747" y="5.969" size="1.27" layer="25" rot="R270"/>
+<attribute name="VALUE" x="2.667" y="5.969" size="1.27" layer="27" rot="R270"/>
+</element>
+<element name="R7" library="adafruit" package="R0805" value="10K" x="9.652" y="4.064" smashed="yes" rot="R180">
+<attribute name="NAME" x="10.414" y="3.048" size="1.27" layer="25" rot="R180"/>
+<attribute name="VALUE" x="10.414" y="6.35" size="1.27" layer="27" rot="R180"/>
+</element>
+<element name="R8" library="adafruit" package="R0805" value="10K" x="5.588" y="6.858" smashed="yes" rot="R180">
+<attribute name="NAME" x="6.35" y="5.842" size="1.27" layer="25" rot="R180"/>
+<attribute name="VALUE" x="6.35" y="9.144" size="1.27" layer="27" rot="R180"/>
+</element>
+<element name="U$1" library="microbuilder" package="ADAFRUIT_3.5MM" value="" x="9.398" y="16.256" smashed="yes" rot="MR0"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -1709,6 +1759,13 @@ chip</description>
 <wire x1="8.652" y1="4.064" x2="6.942" y2="4.064" width="0.3048" layer="1"/>
 </signal>
 </signals>
+<mfgpreviewcolors>
+<mfgpreviewcolor name="soldermaskcolor" color="0xC8008000"/>
+<mfgpreviewcolor name="silkscreencolor" color="0xFFFEFEFE"/>
+<mfgpreviewcolor name="backgroundcolor" color="0xFF282828"/>
+<mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
+<mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
+</mfgpreviewcolors>
 </board>
 </drawing>
 </eagle>
